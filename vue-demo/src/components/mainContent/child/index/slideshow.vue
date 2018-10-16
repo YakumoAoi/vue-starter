@@ -13,11 +13,11 @@
         <ul class="indicate">
             <li v-for="(item,index) in list" :key="index" @mouseover="autoSwitchPause(true);changeColumn(index)" @mouseout="autoSwitchPause(false)" :class="onDisplay===index?'ondisplay-button':''"></li>
         </ul>
-        <div class="pervious button" @click="changeColumn(false)">
+        <div class="pervious button" @click="changeColumn(false)" @mouseover="autoSwitchPause(true)" @mouseout="autoSwitchPause(false)">
             <Iconsvg iconClass="left"></Iconsvg>
         </div>
-        <div class="next button">
-            <Iconsvg iconClass="right" @click="changeColumn(true)"></Iconsvg>
+        <div class="next button" @click="changeColumn(true)" @mouseover="autoSwitchPause(true)" @mouseout="autoSwitchPause(false)">
+            <Iconsvg iconClass="right"></Iconsvg>
         </div>
     </div>
 </template>

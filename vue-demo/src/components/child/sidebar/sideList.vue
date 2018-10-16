@@ -41,8 +41,8 @@ export default {
         },
         computed:{
             albumAmount(){
-                let list=this.list[this.length-1].list
-                return list[list.length-1].albumID
+                let lastList=this.list[this.list.length-1].list
+                return lastList[lastList.length-1].albumID
             }
         },
         methods:{
@@ -72,11 +72,13 @@ export default {
                 }
             },
             createNewList(index){
-                console.log(index)
+                if(this.listName==='') return
                 let newList={
                     albumID:this.albumAmount+1,icon:'musicmenu',word:this.listName,url:`/musiclist?listID=${this.albumAmount+1}`, onClick:false
                 }
                 this.list[index].list.splice(1,0,newList)
+                this.listName=''
+                this.listNameInput=false
             }
         },
         beforemount:function(){
