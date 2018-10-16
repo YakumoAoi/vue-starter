@@ -1,118 +1,65 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-    <First></First>
-  </div>
+	<div class="topBanner">
+		<div class="left-component">
+			<a href="/index" class="logo"></a>
+			<PageTune></PageTune>
+			<SearchBar></SearchBar>
+		</div>
+		<div class="right-component">
+			<UserState></UserState>
+			<SettingAndMessage></SettingAndMessage>
+			<WindowButton></WindowButton>
+		</div>
+	</div>
 </template>
 
 <script>
-import First from './firstTry.vue'
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
-  components:{
-    First
-  }
-}
+	import PageTune from './child/banner/pageTune.vue'
+	import SearchBar from './child/banner/search.vue'
+	import UserState from './child/banner/userState.vue'
+	import SettingAndMessage from './child/banner/settingAndMessage.vue'
+	import WindowButton from './child/banner/windowButton.vue'
+	export default {
+		name: 'Banner',
+		data() {
+			return {}
+		},
+		components: {
+			PageTune,
+			SearchBar,
+			UserState,
+			SettingAndMessage,
+			WindowButton
+		}
+	}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+	.left-component{
+		float:left;
+		width: 480px;
+	}
+	.right-component{
+		float:right;
+		padding: 0 0 14px 0;
+	}
+
+	.topBanner {
+		height: 50px;
+		background-color: #c62f2f;
+	}
+	.topBanner:after{
+		content:'';
+		display: block;
+		clear: both;
+	}
+	.logo {
+		background: url('../assets/topbar.png') 14px 14px no-repeat;
+		background-size:auto 26px ;
+		width: 145px;
+		height: 50px;
+		padding: 14px 13px;
+		float:left;
+	}
 </style>
