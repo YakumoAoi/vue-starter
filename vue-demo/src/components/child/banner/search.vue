@@ -27,9 +27,6 @@ export default {
     },
     methods:{
         resolveResult(data){
-            console.log(this.$axios)
-            console.log(this.keyword)
-            console.log(data)
             let relateList=[
                 {id:1,category:'歌手',categoryIcon:'user',list:[
                     {word:'歌手1',lid:101},
@@ -109,6 +106,7 @@ export default {
         left:0;
         top:36px;
         display: none;
+        z-index:50;
     }
     input{
         color:#fff;

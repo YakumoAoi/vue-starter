@@ -312,6 +312,7 @@ export default {
         border: 1px solid #ccc;
         box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
+        z-index:50;
     }
     .avatar-bg,.user-info-page span{
         float: left;
