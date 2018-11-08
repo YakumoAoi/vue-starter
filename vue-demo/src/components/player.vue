@@ -41,7 +41,7 @@ export default {
             lrcOnDisplay:false,
             playlist:233,
             currentProgress:400,
-            totalTime:400
+            totalTime:100
         }
     },
     components:{
